@@ -144,7 +144,7 @@ function draw() {
     
     
     //Make Trex Jump
-    if(keyDown("space") ){
+    if(keyDown("space")&&trex.y>160 ){
     //To prevent jumping of trex mid-air
       trex.velocityY=-10;
       jumpSound.play();
@@ -175,7 +175,7 @@ function draw() {
     
   
     trex.changeAnimation("collided",trex_collided);
-    
+    trex.velocityY=0;
     obstacleGroup.setVelocityXEach(0);
     cloudGroup.setVelocityXEach(0);
     obstacleGroup.setLifetimeEach(-1);
